@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-dark-bg: #070a13;
+  --color-dark-card: #0f172a;
+  --color-dark-border: #1e293b;
+  --color-brand-indigo: #6366f1;
+  --color-brand-cyan: #06b6d4;
+}
+
+/* Global Transitions & Animations */
+@layer base {
+  body {
+    background-color: var(--color-dark-bg);
+    color: #f8fafc;
+    font-family: var(--font-sans);
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Text Shimmer Effect */
+.text-gradient {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+}
+
+/* AI Speech Avatar Glowing Orb Animation */
+@keyframes orbPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px 0px rgba(99, 102, 241, 0.4), 0 0 0 0px rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px 5px rgba(6, 182, 212, 0.5), 0 0 20px 10px rgba(6, 182, 212, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px 0px rgba(99, 102, 241, 0.4), 0 0 0 0px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.ai-avatar-pulse {
+  animation: orbPulse 3s infinite ease-in-out;
+}
+
+/* Soundwave Wave Bars Animation */
+@keyframes soundwaveBounce {
+  0%, 100% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.soundwave-bar {
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background-color: #06b6d4;
+  border-radius: 2px;
+  transform-origin: bottom;
+  animation: soundwaveBounce 1.2s infinite ease-in-out;
+}
+
+/* Add custom animations delays for natural soundwave bounce */
+.soundwave-bar-1 { animation-delay: 0.1s; }
+.soundwave-bar-2 { animation-delay: 0.3s; }
+.soundwave-bar-3 { animation-delay: 0.5s; }
+.soundwave-bar-4 { animation-delay: 0.2s; }
+.soundwave-bar-5 { animation-delay: 0.4s; }
+.soundwave-bar-6 { animation-delay: 0.6s; }
+.soundwave-bar-7 { animation-delay: 0.15s; }
+.soundwave-bar-8 { animation-delay: 0.35s; }
+.soundwave-bar-9 { animation-delay: 0.55s; }
+
+/* Robot Eye Blinking Animation */
+@keyframes robotEyeBlink {
+  0%, 45%, 55%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+.robot-eye {
+  animation: robotEyeBlink 4s infinite ease-in-out;
+  transform-origin: center;
+}
+
