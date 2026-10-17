@@ -1,9 +1,7 @@
 # AI Mock Interview Platform
 
 An AI-powered mock interview platform designed to help users practise interviews and improve their interview preparation.
-**Live Demo:** [Try the application(https://ai-mock-interview-platform-sglr.onrender.com)]
-
-## Features
+Features
 
 - User registration and login
 - Interview setup and practice
