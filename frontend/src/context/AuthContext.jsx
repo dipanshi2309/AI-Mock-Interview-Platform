@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   // Set default axios base URL if needed, although vite proxy takes care of it
-  axios.defaults.baseURL = '';
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
 
   useEffect(() => {
     const loadUser = async () => {
